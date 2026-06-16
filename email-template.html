@@ -1,0 +1,96 @@
+<!--
+  EmailJS Template Setup (template_wms0h4r)
+  -----------------------------------------
+  1. Go to https://dashboard.emailjs.com/admin/templates
+  2. Open template: template_wms0h4r
+  3. Set "To Email" field to: {{user_email}}
+     (also works: {{to_email}} or {{email}})
+  4. Set Subject to: Your SOS Infrabulls Agent Panel Login Credentials
+  5. Paste the HTML below into the email body (Content tab)
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="margin:0;padding:0;background-color:#f4f7fb;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f7fb;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e1e8f0;">
+          <!-- Header -->
+          <tr>
+            <td style="background:#1174d6;padding:28px 32px;text-align:center;">
+              <h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;">SOS Infrabulls</h1>
+              <p style="margin:8px 0 0;color:#dbeafe;font-size:13px;">Partner Program — Agent Panel Access</p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:32px;">
+              <p style="margin:0 0 16px;color:#0A2540;font-size:16px;font-weight:600;">
+                Hello {{user_name}},
+              </p>
+              <p style="margin:0 0 20px;color:#64748b;font-size:14px;line-height:1.6;">
+                Thank you for registering as a partner with SOS Infrabulls. Your application has been received successfully.
+                Below are your Agent Panel login credentials:
+              </p>
+
+              <!-- Credentials Box -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8faff;border:1px solid #e1e8f0;border-radius:12px;margin-bottom:24px;">
+                <tr>
+                  <td style="padding:20px 24px;">
+                    <p style="margin:0 0 12px;color:#64748b;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">
+                      Login Credentials
+                    </p>
+                    <p style="margin:0 0 8px;color:#0A2540;font-size:14px;">
+                      <strong>Login ID:</strong> {{login_id}}
+                    </p>
+                    <p style="margin:0;color:#0A2540;font-size:14px;">
+                      <strong>Password:</strong> {{password}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA Button -->
+              <table cellpadding="0" cellspacing="0" style="margin:0 auto 24px;">
+                <tr>
+                  <td style="background:#1174d6;border-radius:10px;">
+                    <a href="{{login_url}}" style="display:inline-block;padding:14px 32px;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;">
+                      Login to Agent Panel
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 12px;color:#64748b;font-size:13px;line-height:1.6;">
+                Or copy this link into your browser:<br />
+                <a href="{{login_url}}" style="color:#1174d6;word-break:break-all;">{{login_url}}</a>
+              </p>
+
+              <p style="margin:20px 0 0;padding:16px;background:#fff7ed;border-left:4px solid #f59e0b;border-radius:8px;color:#92400e;font-size:12px;line-height:1.5;">
+                <strong>Security Note:</strong> Please keep your password confidential. Do not share it with anyone.
+                Our team will review your documents and get back to you within 24–48 hours.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:20px 32px;background:#f8faff;border-top:1px solid #e1e8f0;text-align:center;">
+              <p style="margin:0;color:#94a3b8;font-size:11px;line-height:1.5;">
+                © SOS Infrabulls — Mahanta Group<br />
+                This is an automated message. Please do not reply to this email.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
