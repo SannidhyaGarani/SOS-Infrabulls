@@ -53,12 +53,12 @@ const ProjectLogoCarousel = () => {
                         <button
                             type="button"
                             onClick={() => navigate(`/projects/${project.id}`)}
-                            className="w-full h-12 flex items-center justify-center opacity-35 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-400"
+                            className="w-full h-16 flex items-center justify-center opacity-80 hover:opacity-100 transition-all duration-400 group"
                         >
                             <img
                                 src={project.logo || project.image}
                                 alt={project.title}
-                                className="max-h-full max-w-[100px] object-contain"
+                                className="max-h-full max-w-[140px] object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all"
                                 loading="lazy"
                                 decoding="async"
                             />

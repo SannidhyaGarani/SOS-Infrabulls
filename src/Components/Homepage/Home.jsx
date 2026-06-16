@@ -16,11 +16,11 @@ function Home() {
             <HeroSlider />
             <ProjectLogoCarousel />
             <Welcome />
-            <ProjectsSection />
             <ChooseUs />
+            <ProjectsSection />
             <Counter />
             <EventsGallery />
-            <BlogsSpotlight />
+            {/* <BlogsSpotlight /> */}
             <TestimonialSection />
         </main>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowRight, Calendar, Award, Users, Home, ShieldCheck } from "lucide-react";
+import { BtnPrimary, BtnOutline } from "./ui";
 
 const slides = [
   {
@@ -84,7 +85,7 @@ export default function HeroSlider() {
     <section
       id="home"
       onMouseMove={handleMouseMove}
-      className="relative w-full h-screen min-h-[750px] max-h-[1080px] overflow-hidden bg-gray-950 group/hero select-none"
+      className="relative w-full h-[85vh] min-h-[600px] md:h-screen md:min-h-[750px] max-h-[1080px] overflow-hidden bg-gray-950 group/hero select-none"
     >
       {/* 1. T-Square Drafting Crosshair Lines */}
       <div className="absolute inset-0 z-30 pointer-events-none hidden lg:block opacity-0 group-hover/hero:opacity-100 transition-opacity duration-300 will-change-transform">
@@ -166,8 +167,8 @@ export default function HeroSlider() {
       </div>
 
       {/* 5. Typography Content System */}
-      <div className="relative z-20 h-full flex flex-col justify-center">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-16 w-full">
+      <div className="relative z-20 h-full flex flex-col justify-center pt-20 md:pt-0">
+        <div className="max-w-[1440px] mx-auto px-7 md:px-16 w-full">
           <AnimatePresence mode="wait">
             <motion.div key={`content-${slide.id}`} className="max-w-3xl">
               {/* Badge Anchor */}
@@ -177,7 +178,7 @@ export default function HeroSlider() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="inline-flex items-center gap-3 mb-6"
+                className="hidden sm:inline-flex items-center gap-3 mb-6"
               >
                 <span className="w-10 h-[1.5px]" style={{ background: "#1174d6" }} />
                 <span className="text-[11px] tracking-[0.3em] uppercase font-bold text-[#60b3ff]">
@@ -192,7 +193,7 @@ export default function HeroSlider() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="text-4xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.08] mb-6 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+                className="text-[2.75rem] leading-[1.1] sm:text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                 style={{
                   fontFamily: "'Georgia', serif",
                   whiteSpace: "pre-line",
@@ -208,7 +209,7 @@ export default function HeroSlider() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="text-[15px] md:text-[18px] text-white/70 max-w-xl leading-relaxed mb-10 tracking-wide font-light"
+                className="text-[16px] md:text-[18px] text-white/70 max-w-xl leading-relaxed mb-10 md:mb-12 tracking-wide font-light"
               >
                 {slide.subheadline}
               </motion.p>
@@ -220,30 +221,15 @@ export default function HeroSlider() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6"
               >
-                <motion.a
-                  href="#projects"
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-[13px] font-bold text-white tracking-wider uppercase transition-shadow"
-                  style={{
-                    background: "linear-gradient(135deg, #1174d6 0%, #0a5ab5 100%)",
-                    boxShadow: "0 6px 24px rgba(17,116,214,0.35)",
-                  }}
-                >
+                <BtnPrimary to="/projects/ongoing" className="w-full sm:w-auto !py-4 lg:!py-3.5 !justify-center">
                   Explore Projects
-                  <ArrowRight size={15} />
-                </motion.a>
-                <motion.a
-                  href="#contact"
-                  whileHover={{ backgroundColor: "rgba(255,255,255,0.15)", y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-[13px] font-bold text-white border border-white/25 backdrop-blur-sm transition-all bg-white/5 tracking-wider uppercase"
-                >
-                  <Calendar size={15} className="text-cyan-400" />
+                </BtnPrimary>
+                <BtnOutline to="#contact" className="w-full sm:w-auto !py-4 lg:!py-3.5 !justify-center !bg-white/5 !text-white !border-white/20 hover:!bg-white/10 backdrop-blur-sm">
+                  <Calendar size={17} className="text-cyan-400" />
                   Schedule Visit
-                </motion.a>
+                </BtnOutline>
               </motion.div>
             </motion.div>
           </AnimatePresence>

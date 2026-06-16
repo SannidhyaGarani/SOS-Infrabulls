@@ -10,7 +10,7 @@ const highlights = [
 ];
 
 const Welcome = () => (
-    <section className="w-full py-24 md:py-36 bg-white overflow-hidden relative">
+    <section className="w-full py-8 md:py-12 bg-white overflow-hidden relative">
         {/* Elegant Ambient Glow Backgrounds */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-50/40 via-fuchsia-50/20 to-transparent rounded-full blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-50/30 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" />

@@ -1,6 +1,11 @@
 import React from 'react';
-import { ShieldCheck, LineChart, Handshake } from 'lucide-react';
-import { SectionTitle, Reveal, DividerGradient } from './ui';
+import { ShieldCheck, LineChart, Handshake, ArrowUpRight } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { SectionTitle, Reveal } from './ui';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const pillars = [
     {
@@ -23,76 +28,119 @@ const pillars = [
     },
 ];
 
-const Pillars = () => (
-    <section className="w-full py-24 md:py-36 bg-gray-50/50 overflow-hidden relative border-t border-gray-100">
-        {/* Fine-line geometric detail for a high-end architectural feel */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gray-200/40 hidden lg:block pointer-events-none" />
+const PillarCard = ({ number, icon: Icon, title, description }) => (
+    <div className="group relative flex flex-col justify-between p-8 md:p-10 rounded-[2rem] bg-white border border-gray-100/80 shadow-[0_10px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgba(37,99,235,0.06)] hover:border-blue-500/20 transition-all duration-500 hover:-translate-y-1.5 h-[390px] isolate overflow-hidden">
         
-        {/* Subtle background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-blue-50/20 via-transparent to-fuchsia-50/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Subtle, Sophisticated Background Luminous Radial Glow */}
+        <div className="absolute -top-20 -right-20 w-44 h-44 bg-gradient-to-br from-blue-50 to-fuchsia-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-        {/* 1440px Max Width Layout Wrapper */}
-        <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-20 w-full relative">
+        <div>
+            {/* Top Row: Luxury Minimal Branding Elements */}
+            <div className="flex items-center justify-between mb-8">
+                <div className="flex flex-col">
+                    <span className="text-[10px] font-bold tracking-[0.25em] text-gray-300 uppercase">
+                        Pillar
+                    </span>
+                    <span className="text-xl font-extrabold text-blue-600/20 group-hover:text-blue-600/40 transition-colors duration-500">
+                        {number}
+                    </span>
+                </div>
+                
+                {/* Luminous Light-Theme Icon Container */}
+                <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100/60 flex items-center justify-center text-gray-700 transition-all duration-500 group-hover:bg-gradient-to-tr group-hover:from-blue-600 group-hover:to-fuchsia-500 group-hover:text-white group-hover:shadow-[0_12px_24px_rgba(37,99,235,0.18)] group-hover:scale-105">
+                    <Icon className="w-6 h-6 stroke-[1.35]" />
+                </div>
+            </div>
+
+            {/* Typography Core Block */}
+            <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight mb-4 transition-colors duration-300 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-fuchsia-600 group-hover:bg-clip-text">
+                {title}
+            </h3>
             
-            {/* Header Area */}
-            <div className="max-w-3xl mb-16 md:mb-24">
-                <Reveal delay={50} className="space-y-4">
+            {/* Clamped for precise vertical structural symmetry across elements */}
+            <p className="text-gray-500 text-sm md:text-[15px] font-normal leading-relaxed tracking-wide line-clamp-5">
+                {description}
+            </p>
+        </div>
+
+        {/* Clean, Understated Light-Theme Bottom Anchor Line */}
+        <div className="flex items-center gap-3 pt-5 border-t border-gray-50">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">
+                Core Value
+            </span>
+            <div className="h-[1px] flex-grow bg-gray-100/70" />
+            <div className="flex items-center gap-1.5 text-gray-400 group-hover:text-blue-600 transition-colors duration-500">
+                <span className="text-[11px] font-bold opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-500">
+                    Discover
+                </span>
+                <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </div>
+        </div>
+    </div>
+);
+
+const Pillars = () => (
+    <section className="w-full py-10 md:py-15 bg-white overflow-hidden relative">
+        {/* Soft, ultra-faded ambient backdrop lines */}
+        <div className="absolute top-1/4 left-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-50/20 via-fuchsia-50/10 to-transparent rounded-full blur-[140px] pointer-events-none -translate-x-1/2" />
+
+        {/* Strict 1440px Workspace Boundaries */}
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 w-full relative z-10">
+            
+            {/* Header Content Engine */}
+            <div className="max-w-3xl mb-16 md:mb-20">
+                <Reveal delay={50}>
                     <SectionTitle
                         eyebrow="The SOS Foundation"
                         title="Built on principles of"
                         highlight="enduring value"
+                        subtitle="Our core pillars define everything we do, ensuring each investment becomes a lasting legacy for generations to come."
                     />
-                    <div className="w-24">
-                        <DividerGradient />
-                    </div>
                 </Reveal>
             </div>
 
-            {/* Premium 3-Column Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12 relative z-10">
-                {pillars.map(({ number, icon: Icon, title, description }, index) => (
-                    <Reveal 
-                        key={title} 
-                        delay={100 * (index + 1)}
-                        className="group relative flex flex-col justify-between p-8 xl:p-10 rounded-2xl bg-white border border-gray-100 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-1.5 overflow-hidden"
-                    >
-                        {/* Interactive gradient edge line on hover */}
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-fuchsia-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
-                        <div>
-                            {/* Card Top: Number Indicator & Luxury Icon Treatment */}
-                            <div className="flex items-center justify-between mb-10">
-                                <span className="text-[11px] font-bold tracking-[0.25em] text-gray-300 group-hover:text-blue-600/80 transition-colors duration-500 uppercase">
-                                    Pillar // {number}
-                                </span>
-                                
-                                <div className="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-700 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-fuchsia-500 group-hover:text-white group-hover:shadow-[0_8px_20px_-6px_rgba(37,99,235,0.4)]">
-                                    <Icon className="w-5 h-5 transition-transform duration-500 group-hover:scale-110" />
-                                </div>
-                            </div>
-
-                            {/* Card Content */}
-                            <h3 className="text-2xl font-bold text-gray-900 tracking-tight mb-4 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-fuchsia-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500 inline-block">
-                                {title}
-                            </h3>
-                            
-                            <p className="text-gray-500 text-[15px] font-light leading-relaxed tracking-wide">
-                                {description}
-                            </p>
-                        </div>
-
-                        {/* Minimalist lower indicator arrow */}
-                        <div className="mt-8 pt-4 border-t border-gray-50 flex items-center justify-end opacity-0 transform translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400 mr-2">Learn More</span>
-                            <svg className="w-4 h-4 text-fuchsia-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </div>
-                    </Reveal>
-                ))}
-            </div>
-
+            {/* Slider Interface Integration */}
+            <Reveal delay={150}>
+                <Swiper
+                    modules={[Pagination, Autoplay]}
+                    spaceBetween={32}
+                    slidesPerView={1}
+                    pagination={{ clickable: true, dynamicBullets: true }}
+                    autoplay={{ delay: 6000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                    breakpoints={{
+                        640: { slidesPerView: 1.2, spaceBetween: 24 },
+                        768: { slidesPerView: 2, spaceBetween: 32 },
+                        1024: { slidesPerView: 3, spaceBetween: 32 },
+                    }}
+                    className="pillars-swiper !pb-16 !px-2"
+                >
+                    {pillars.map((pillar) => (
+                        <SwiperSlide key={pillar.title} className="h-auto py-2">
+                            <PillarCard {...pillar} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </Reveal>
         </div>
+
+        {/* Minimalist Light Bullet Active Custom States */}
+        <style>{`
+            .pillars-swiper .swiper-pagination {
+                bottom: 0px !important;
+            }
+            .pillars-swiper .swiper-pagination-bullet-active {
+                background: linear-gradient(to right, #2563eb, #d946ef) !important;
+                width: 32px !important;
+                border-radius: 4px !important;
+                opacity: 1 !important;
+            }
+            .pillars-swiper .swiper-pagination-bullet {
+                background: #94a3b8;
+                opacity: 0.4;
+                height: 4px;
+                transition: all 0.4s ease;
+            }
+        `}</style>
     </section>
 );
 

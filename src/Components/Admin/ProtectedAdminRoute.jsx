@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { listenAuth, isAdmin } from "../Firebase/authHelpers";
+import { listenAuth } from "../Firebase/authHelpers";
 
 const Spinner = () => (
   <div style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "50vh" }}>
@@ -20,20 +20,18 @@ const ProtectedAdminRoute = () => {
   const [state, setState] = useState({ checking: true, user: null, allowed: false });
 
   useEffect(() => {
-    const unsub = listenAuth(async (user) => {
-      if (!user) {
-        setState({ checking: false, user: null, allowed: false });
-        return;
-      }
-      const allowed = await isAdmin(user.uid);
-      setState({ checking: false, user, allowed });
+    const unsub = listenAuth((user) => {
+      setState({ checking: false, user, allowed: !!user });
     });
     return () => unsub();
   }, []);
 
   if (state.checking) return <Spinner />;
-  if (!state.user) return <Navigate to="/admin-login" replace />;
-  if (!state.allowed) return <Navigate to="/" replace />;
+  
+  if (!state.user) {
+    return <Navigate to="/admin-login" replace />;
+  }
+  
   return <Outlet />;
 };
 

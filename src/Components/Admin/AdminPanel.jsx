@@ -3,22 +3,22 @@ import AdminSidebar from './components/AdminSidebar';
 import AdminHeader from './components/AdminHeader';
 import Dashboard from './sections/Dashboard';
 import ProjectsSection from './sections/ProjectsSection';
-import PropertiesSection from './sections/PropertiesSection';
+
 import BlogsSection from './sections/BlogsSection';
 import GallerySection from './sections/GallerySection';
 import TeamSection from './sections/TeamSection';
 import StatsSection from './sections/StatsSection';
-import TestimonialsSection from './sections/TestimonialsSection';
+
 
 const SECTION_MAP = {
   dashboard: Dashboard,
   projects: ProjectsSection,
-  properties: PropertiesSection,
+
   blogs: BlogsSection,
   gallery: GallerySection,
   team: TeamSection,
   stats: StatsSection,
-  testimonials: TestimonialsSection,
+
 };
 
 const AdminPanel = () => {

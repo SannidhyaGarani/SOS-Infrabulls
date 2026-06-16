@@ -75,31 +75,50 @@ const Counter = () => {
   }, []);
 
   return (
-    <section id="stats" className="py-24 md:py-32 bg-white border-y border-gray-100">
-      <div className="container mx-auto px-6 md:px-12">
-        <Reveal className="text-center mb-14">
+    <section id="stats" className="py-12 md:py-20 bg-white relative overflow-hidden">
+      {/* Ambient background elements for a premium feel */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-50/30 to-transparent rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-fuchsia-50/30 to-transparent rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
+        <Reveal className="text-center mb-16 md:mb-24">
           <SectionTitle
             align="center"
             eyebrow="Our Impact"
             title="Numbers that"
-            highlight="speak"
+            highlight="speak for us"
             subtitle="A legacy of trust built one family, one investment, and one landmark at a time."
           />
         </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
           {stats.map((stat, index) => {
             const Icon = ICON_MAP[stat.icon] || Users;
             return (
-              <Reveal key={`${stat.label}-${index}`} delay={index * 70}>
-                <div className="hp-card-lift relative text-center p-8 md:p-10 rounded-2xl bg-gray-50/80 border border-gray-100">
-                  <div className="w-11 h-11 mx-auto mb-5 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-blue-600">
-                    <Icon className="w-5 h-5" />
+              <Reveal key={`${stat.label}-${index}`} delay={index * 100}>
+                <div className="group relative">
+                  {/* Subtle hover background effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-blue-50 to-fuchsia-50 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl pointer-events-none" />
+                  
+                  <div className="relative flex flex-col items-center text-center p-8 md:p-10 rounded-[2rem] bg-white border border-gray-100/80 shadow-[0_10px_30px_rgba(0,0,0,0.02)] transition-all duration-700 group-hover:translate-y-[-10px] group-hover:shadow-[0_40px_70px_rgba(0,0,0,0.08)] group-hover:border-transparent isolate">
+                    
+                    {/* Decorative glass icon container */}
+                    <div className="w-16 h-16 mb-8 rounded-[1.25rem] bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-700 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-fuchsia-500 group-hover:text-white group-hover:shadow-[0_12px_24px_rgba(37,99,235,0.25)] group-hover:scale-110">
+                      <Icon className="w-7 h-7" strokeWidth={1.5} />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h4 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tighter transition-colors duration-500 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-fuchsia-500 group-hover:bg-clip-text">
+                        <CountUp to={stat.value} />
+                      </h4>
+                      <p className="text-[11px] font-bold tracking-[0.25em] text-gray-400 uppercase pt-2">
+                        {stat.label}
+                      </p>
+                    </div>
+
+                    {/* Minimalist interactive line */}
+                    <div className="w-0 h-[2px] bg-gradient-to-r from-blue-600 to-fuchsia-500 mt-6 rounded-full transition-all duration-700 group-hover:w-16 lg:group-hover:w-20" />
                   </div>
-                  <p className="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight mb-2">
-                    <CountUp to={stat.value} />
-                  </p>
-                  <p className="text-xs font-medium tracking-wide text-gray-500 uppercase">{stat.label}</p>
                 </div>
               </Reveal>
             );

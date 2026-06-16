@@ -11,11 +11,5 @@ export const listenAuth = (callback) => {
   return onAuthStateChanged(auth, callback);
 };
 
-export const isAdmin = async (uid) => {
-  const ref = doc(db, "admins", uid);
-  const snap = await getDoc(ref);
-  return snap.exists();
-};
-
 export const signOutAdmin = () => signOut(auth);
 

@@ -1,12 +1,10 @@
 import {
   LayoutDashboard,
   Building2,
-  Home,
   Newspaper,
   Images,
   Users,
   BarChart3,
-  MessageSquareQuote,
 } from 'lucide-react';
 
 export const ADMIN_SECTIONS = [
@@ -23,13 +21,7 @@ export const ADMIN_SECTIONS = [
     homepage: 'Projects & Logo Carousel',
     collection: 'projects',
   },
-  {
-    id: 'properties',
-    label: 'Properties',
-    icon: Home,
-    homepage: 'Featured Properties',
-    collection: 'properties',
-  },
+
   {
     id: 'blogs',
     label: 'Blogs',
@@ -58,13 +50,7 @@ export const ADMIN_SECTIONS = [
     homepage: 'Counter Section',
     collection: 'homepage_settings',
   },
-  {
-    id: 'testimonials',
-    label: 'Testimonials',
-    icon: MessageSquareQuote,
-    homepage: 'Happy Faces',
-    collection: 'testimonials',
-  },
+
 ];
 
 export const getSection = (id) => ADMIN_SECTIONS.find((s) => s.id === id);
