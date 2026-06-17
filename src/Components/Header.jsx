@@ -295,11 +295,11 @@ export default function PremiumHeader() {
                   <span className="text-sm font-semibold">+91 731-4909915</span>
                 </a>
                 <Link
-                  to="/contact"
+                  to="/join"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-[#1174d6] to-[#0a5ab8] shadow-[0_4px_20px_rgba(17,116,214,0.35)]"
                 >
-                  Book Consultation
+                  Join As Partner
                   <ArrowUpRight size={15} />
                 </Link>
               </div>
