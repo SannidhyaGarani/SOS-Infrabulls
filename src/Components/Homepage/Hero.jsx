@@ -226,7 +226,7 @@ export default function HeroSlider() {
                 <BtnPrimary to="/projects/ongoing" className="w-full sm:w-auto !py-4 lg:!py-3.5 !justify-center">
                   Explore Projects
                 </BtnPrimary>
-                <BtnOutline to="#contact" className="w-full sm:w-auto !py-4 lg:!py-3.5 !justify-center !bg-white/5 !text-white !border-white/20 hover:!bg-white/10 backdrop-blur-sm">
+                <BtnOutline to="/contact" className="w-full sm:w-auto !py-4 lg:!py-3.5 !justify-center !bg-white/5 !text-white !border-white/20 hover:!bg-white/10 backdrop-blur-sm">
                   <Calendar size={17} className="text-cyan-400" />
                   Schedule Visit
                 </BtnOutline>

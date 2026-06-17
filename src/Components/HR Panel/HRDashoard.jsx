@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import {
   LayoutDashboard, Users, UserCheck, LogOut, Search, Menu, X,
   Eye, CheckCircle2, XCircle, Clock, Loader2, RefreshCw, ExternalLink,
@@ -13,6 +14,7 @@ import {
 } from '../Firebase/hrHelpers';
 import S3Image from '../S3Image';
 import { getImageViewUrl } from '../Firebase/s3UploadService';
+import { signOutAdmin } from '../Firebase/authHelpers';
 
 const statusStyle = (status) => {
   if (status === 'Approved') return 'bg-emerald-500/10 text-emerald-700 border-emerald-200/80';
@@ -35,6 +37,14 @@ const HRDashboard = () => {
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      await signOutAdmin();
+    } catch (err) {
+      console.error('Logout failed', err);
+    }
+  };
 
   const loadAgents = useCallback(async () => {
     setLoading(true);
@@ -201,8 +211,18 @@ const HRDashboard = () => {
           })}
         </nav>
 
-        <div className="p-4 border-t border-slate-100 shrink-0">
-          <button className="w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-rose-600 hover:bg-rose-50 transition-colors">
+        <div className="p-4 border-t border-slate-100 shrink-0 space-y-2">
+          <Link 
+            to="/admin"
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-slate-500 hover:bg-slate-50 hover:text-[#1174d6] transition-colors"
+          >
+            <LayoutDashboard className="w-4 h-4" />
+            <span>Content Admin</span>
+          </Link>
+          <button 
+            onClick={handleLogout}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-rose-600 hover:bg-rose-50 transition-colors"
+          >
             <LogOut className="w-4 h-4" />
             <span>Logout</span>
           </button>

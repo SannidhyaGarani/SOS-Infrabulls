@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LogOut, ExternalLink } from 'lucide-react';
+import { LogOut, ExternalLink, Users } from 'lucide-react';
 import { ADMIN_SECTIONS } from '../config/sections';
 
 const AdminSidebar = ({ active, onNavigate }) => (
@@ -45,6 +45,13 @@ const AdminSidebar = ({ active, onNavigate }) => (
     </nav>
 
     <div className="p-4 border-t border-slate-100 space-y-2">
+      <Link
+        to="/hr"
+        className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-slate-500 hover:text-[#1174d6] hover:bg-slate-50 transition-colors"
+      >
+        <Users className="w-3.5 h-3.5" />
+        Go to HR Panel
+      </Link>
       <Link
         to="/"
         className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-slate-500 hover:text-[#1174d6] hover:bg-slate-50 transition-colors"

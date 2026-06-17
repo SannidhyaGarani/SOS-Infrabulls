@@ -78,7 +78,7 @@ const GallerySection = React.forwardRef(({ title, icon: Icon, items, onCardClick
         <div className="mt-8 text-center">
           <button
             onClick={() => setExpanded(!expanded)}
-            className="px-8 py-3 rounded-xl border-2 border-[#1174d6] text-[#1174d6] font-bold text-sm hover:bg-[#1174d6] hover:text-white transition-all duration-200"
+            className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300"
           >
             {expanded ? 'Show Less' : `View All ${title}`}
           </button>
@@ -146,7 +146,7 @@ const Gallery = () => {
       />
 
       {/* Jump Nav */}
-      <div className="sticky top-[127px] z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+      <div className="md:sticky top-[127px] z-40 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-2 flex-wrap">
           <span className="text-slate-400 text-xs font-semibold mr-2">Jump to:</span>
           {[

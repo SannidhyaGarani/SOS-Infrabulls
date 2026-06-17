@@ -98,10 +98,10 @@ const ContactSection = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting || !agreed}
-                    className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#1174d6] text-white font-bold text-sm shadow-[0_8px_24px_rgba(17,116,214,0.35)] hover:bg-[#0a5ab8] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                    className="flex items-center justify-center gap-2.5 w-full py-4 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
-                    <Send size={15} />
+                    <Send size={14} className="ml-1" />
                   </button>
                 </form>
               )}

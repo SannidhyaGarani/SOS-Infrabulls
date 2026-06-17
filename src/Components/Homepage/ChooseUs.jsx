@@ -80,7 +80,7 @@ const PillarCard = ({ number, icon: Icon, title, description }) => (
 );
 
 const Pillars = () => (
-    <section className="w-full py-10 md:py-15 bg-white overflow-hidden relative">
+    <section className="w-full py-8 md:py-10 bg-white overflow-hidden relative">
         {/* Soft, ultra-faded ambient backdrop lines */}
         <div className="absolute top-1/4 left-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-blue-50/20 via-fuchsia-50/10 to-transparent rounded-full blur-[140px] pointer-events-none -translate-x-1/2" />
 

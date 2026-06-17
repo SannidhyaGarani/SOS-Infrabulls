@@ -131,9 +131,9 @@ export default function EventsGallery() {
             pagination={{ clickable: true }}
             navigation={{ prevEl, nextEl }}
             breakpoints={{
-              640: { slidesPerView: 1.5, spaceBetween: 40 },
-              1024: { slidesPerView: 2.3, spaceBetween: 48 },
-              1280: { slidesPerView: 2.8, spaceBetween: 56 },
+              640: { slidesPerView: 1.8, spaceBetween: 32 },
+              1024: { slidesPerView: 2.5, spaceBetween: 40 },
+              1280: { slidesPerView: 3.2, spaceBetween: 48 },
             }}
           >
             {events.map((event) => (
@@ -177,7 +177,7 @@ export default function EventsGallery() {
 
 function EventCard({ event }) {
   return (
-    <div className="group relative w-full h-[500px] sm:h-[600px] rounded-[2rem] overflow-hidden cursor-pointer bg-gray-950 isolate shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)] transition-shadow duration-700">
+    <div className="group relative w-full h-[380px] sm:h-[480px] rounded-[2rem] overflow-hidden cursor-pointer bg-gray-950 isolate shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)] transition-shadow duration-700">
       
       {/* Cinematic High-Res Image with Slow Parallax Scale */}
       <div className="absolute inset-0 z-0">

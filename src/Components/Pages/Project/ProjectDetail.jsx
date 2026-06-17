@@ -84,14 +84,22 @@ const ProjectDetail = () => {
   const isCompleted = project.status === "completed";
 
   return (
-    <div className="min-h-screen bg-white" style={{ paddingTop: "calc(90px + 37px)" }}>
+    <div className="min-h-screen bg-white">
+      {/* Premium Dark Header Spacer — ensures header visibility */}
+      <div className="bg-[#0A2540] relative overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#1174d6]/10 to-transparent pointer-events-none" />
+        <div className="h-[127px] hidden md:block" />
+        <div className="h-[90px] md:hidden" />
+      </div>
 
       {/* Hero Image */}
       <section
-        className="relative h-[50vh] min-h-[320px] flex items-end bg-cover bg-center"
+        className="relative h-[45vh] md:h-[65vh] min-h-[320px] md:min-h-[450px] flex items-end bg-cover bg-center"
         style={{ backgroundImage: `url(${project.image || NO_IMG})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/40 to-transparent" />
+        {/* Editorial Overlays */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/40 to-transparent z-10" />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 lg:px-12 pb-10">
           <div className="flex flex-wrap items-center gap-3 mb-3">
             <Link
@@ -121,7 +129,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Floating meta bar */}
-      <div className="bg-white border-b border-slate-100 shadow-sm sticky top-[127px] z-30">
+      <div className="bg-white border-b border-slate-100 shadow-sm md:sticky top-[127px] z-30">
         <div className="max-w-6xl mx-auto px-6 lg:px-12 py-4 flex flex-wrap gap-4">
           {[
             { icon: Building2, label: "Developer", value: project.developer || "SOS Infrabulls" },
@@ -287,10 +295,10 @@ const ProjectDetail = () => {
           </div>
           <Link
             to="/contact"
-            className="flex-shrink-0 flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#1174d6] text-white font-bold text-sm shadow-[0_8px_24px_rgba(17,116,214,0.5)] hover:bg-blue-500 hover:-translate-y-0.5 transition-all duration-200"
+            className="flex-shrink-0 flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300"
           >
-            <Phone size={15} />
-            Talk to us →
+            <Phone size={14} />
+            Talk to us <span className="ml-1">→</span>
           </Link>
         </div>
 

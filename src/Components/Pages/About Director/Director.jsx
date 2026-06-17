@@ -74,9 +74,9 @@ const Director = () => (
               </div>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-[#1174d6] text-white text-sm font-bold shadow-[0_8px_24px_rgba(17,116,214,0.35)] hover:bg-[#0a5ab8] hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300"
               >
-                Connect with Us →
+                Connect with Us <span className="ml-1">→</span>
               </Link>
             </div>
 

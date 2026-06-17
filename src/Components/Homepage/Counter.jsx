@@ -75,7 +75,7 @@ const Counter = () => {
   }, []);
 
   return (
-    <section id="stats" className="py-12 md:py-20 bg-white relative overflow-hidden">
+    <section id="stats" className="py-8 md:py-12 bg-white relative overflow-hidden">
       {/* Ambient background elements for a premium feel */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-50/30 to-transparent rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-fuchsia-50/30 to-transparent rounded-full blur-[100px] pointer-events-none" />

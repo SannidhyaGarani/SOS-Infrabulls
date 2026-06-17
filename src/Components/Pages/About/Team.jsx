@@ -57,9 +57,9 @@ const TeamMembersPage = () => {
               opacity: 0.15;
             }
             .team-swiper .swiper-pagination-bullet-active {
-              width: 28px !important;
-              border-radius: 6px !important;
-              background: #1174d6 !important;
+              width: 32px !important;
+              border-radius: 4px !important;
+              background: linear-gradient(to right, #2563eb, #d946ef) !important;
               opacity: 1;
             }
             .team-swiper { padding-bottom: 70px !important; }

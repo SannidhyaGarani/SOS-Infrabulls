@@ -121,7 +121,7 @@ const Projects = () => {
     if (projects.length === 0) return null;
 
     return (
-        <section className="py-8 md:py-14 bg-white overflow-hidden w-full relative">
+        <section className="py-8 bg-white overflow-hidden w-full relative">
             {/* 1440px Strict Layout Wrapper */}
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
                 
@@ -138,7 +138,7 @@ const Projects = () => {
 
                     <Reveal delay={100} className="hidden md:flex gap-3">
                         <Link
-                            to="/projectgallery"
+                            to="/projects"
                             className="group flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-600 hover:text-blue-600 transition-all border border-gray-100 px-6 py-3 rounded-full bg-gray-50/50 hover:bg-white hover:shadow-md"
                         >
                             View All Projects

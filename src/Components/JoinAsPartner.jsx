@@ -365,17 +365,17 @@ const JoinAsPartner = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative inline-flex items-center justify-center gap-3 w-full max-w-md px-10 py-4 bg-gradient-to-r from-[#1174d6] to-[#0a5ab8] text-white font-bold rounded-2xl shadow-[0_10px_30px_rgba(17,116,214,0.35)] hover:shadow-[0_15px_40px_rgba(17,116,214,0.45)] hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:translate-y-0"
+                className="group relative inline-flex items-center justify-center gap-2.5 w-full max-w-md px-8 py-4 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:translate-y-0"
               >
                 {loading ? (
                   <>
-                    <Loader2 size={18} className="animate-spin" />
+                    <Loader2 size={16} className="animate-spin" />
                     <span>Processing...</span>
                   </>
                 ) : (
                   <>
                     <span>Submit Application</span>
-                    <CheckCircle2 size={18} className="group-hover:scale-110 transition-transform" />
+                    <CheckCircle2 size={16} className="group-hover:scale-110 transition-transform" />
                   </>
                 )}
               </button>

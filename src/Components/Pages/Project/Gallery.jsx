@@ -40,7 +40,7 @@ const ProjectCard = ({ project, onView }) => (
       )}
       <button
         onClick={onView}
-        className="mt-auto flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-[#1174d6] to-[#0a5ab8] text-white text-sm font-bold shadow-[0_6px_20px_rgba(17,116,214,0.3)] hover:shadow-[0_10px_28px_rgba(17,116,214,0.4)] hover:-translate-y-0.5 transition-all duration-200"
+        className="mt-auto flex items-center justify-center gap-2.5 w-full py-4 bg-gradient-to-r from-blue-600 to-fuchsia-500 text-white text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300"
       >
         View Project Details
         <ArrowRight size={15} />

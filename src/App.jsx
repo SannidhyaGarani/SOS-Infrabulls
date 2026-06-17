@@ -33,13 +33,14 @@ function App() {
       <Routes>
         {/* Admin Routes (No Site Header/Footer) */}
         <Route path="/admin-login" element={<AdminLogin />} />
-        <Route path="/admin" element={<ProtectedAdminRoute />}>
-          <Route index element={<AdminPanel />} />
+        <Route element={<ProtectedAdminRoute />}>
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/hr" element={<HRDashboard />} />
         </Route>
+
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/agent/login" element={<AgentLogin />} />
         <Route path="/agent/dashboard" element={<AgentDashboard />} />
-        <Route path="/hr" element={<HRDashboard />} />
 
         {/* Main Site Routes */}
         <Route
@@ -57,6 +58,7 @@ function App() {
                 <Route path="/team" element={<TeamMembersPage />} />
 
                 {/* Projects dropdown */}
+                <Route path="/projects" element={<OngoingProjects />} />
                 <Route path="/projects/completed" element={<Complete />} />
                 <Route path="/projects/ongoing" element={<OngoingProjects />} />
                 <Route path="/projects/:projectId" element={<ProjectDetail />} />
